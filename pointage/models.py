@@ -18,10 +18,10 @@ class Pointage(models.Model):
     # Pour la synchronisation
     synced_with_odoo = models.BooleanField(default=False)
     # odoo_pointage_id = models.IntegerField(null=True, blank=True)
-    
+
     def __str__(self):
         return f"{self.personnel.matricule} - {self.get_type_pointage_display()} - {self.datetime_pointage}"
-    
+
     class Meta:
         ordering = ['-datetime_pointage']
 
