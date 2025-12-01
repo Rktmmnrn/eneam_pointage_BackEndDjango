@@ -25,7 +25,14 @@ SECRET_KEY = 'django-insecure-l_vrv!b@p8yv2pm-a+&r-uy-foz1s3zfja50z*pw%3loah3r=0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'odoo.eneam.local',
+    '127.0.0.1',
+    '0.0.0.0',
+    '192.168.88.5', # Adresse IP actuelle statique
+    # '*', # test
+]
 
 
 # Application definition
@@ -55,7 +62,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:8069"]
+# CORS_ALLOWED_ORIGINS = ["http://localhost:8069"]
+CORS_ALLOW_ALL_ORIGINS = True # test
 
 ROOT_URLCONF = 'pointageProject.urls'
 
